@@ -1,5 +1,8 @@
 <md-toolbar layout="fill" class="md-whiteframe-z2">
-  <div class="md-toolbar-tools">
+  <div ng-controller="NavigationController" class="md-toolbar-tools">
+    <md-button ng-click="openLeftMenu()" hide-gt-sm>
+      <md-icon md-svg-icon="action:ic_dashboard_24px"></md-icon>
+    </md-button>
     <!--display title provided by router-->
     <span>{{ $title }}</span>
   </div>
