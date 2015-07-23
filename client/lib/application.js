@@ -1,1 +1,1 @@
-angular.module("devStop", ['angular-meteor'])
+angular.module("devStop", ['angular-meteor', 'ui.router', 'ngMaterial', 'ui.router.title']);
