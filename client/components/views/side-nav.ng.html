@@ -4,15 +4,45 @@
         class="md-sidenav md-whiteframe-z2"
         md-is-locked-open="$mdMedia('gt-sm')"
         flex>
-  <md-content layout-padding class="site__side-nav--container">
+  <md-content class="site__side-nav--container">
     <h1 class="md-display-3">
       <a href="/">
         devStop
       </a>
     </h1>
     <md-content class="site__side-nav--content">
-      <h3>Technologies</h3>
-      <p>List of techs</p>
+      <h2>Technologies</h2>
+      <div class="tech__search--container" ng-controller="TechnologyListController">
+        <form>
+          <md-autocomplete
+                  md-selected-item="technologies.selectedItem"
+                  md-search-text-change="technologies.searchTextChange(technologies.searchText)"
+                  md-search-text="technologies.searchText"
+                  md-selected-item-change="technologies.selectedItemChange(item)"
+                  md-items="item in technologies | filter:technologies.searchText"
+                  md-item-text="item.name"
+                  md-min-length="0"
+                  placeholder="Search Technologies">
+            <md-item-template>
+              <span md-highlight-text="technologies.searchText" md-highlight-flags="^i">
+                {{item.name}}
+              </span>
+            </md-item-template>
+            <md-not-found>
+              No matches found for "{{technologies.searchText}}".
+            </md-not-found>
+          </md-autocomplete>
+          <md-list>
+            <md-item ng-repeat="item in technologies | filter:technologies.searchText">
+              <h3>
+                <md-button href="/technologies/{{ item._id }}">
+                  {{ item.name }}
+                </md-button>
+              </h3>
+            </md-item>
+          </md-list>
+        </form>
+      </div>
     </md-content>
   </md-content>
 </md-sidenav>

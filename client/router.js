@@ -13,7 +13,17 @@ angular.module('devStop')
                 return 'Welcome to devStop'
               }
             }
-
+          })
+          .state('technologyDetails', {
+            url: '/technologies/:techId',
+            templateUrl: 'client/technologies/views/technology-details.ng.html',
+            controller: 'TechnologyDetailsController',
+            resolve: {
+              $title: function($meteor, $stateParams) {
+                var techName = $meteor.object(Technologies, $stateParams.techId).name || "";
+                return techName + ' Details';
+              }
+            }
           });
 
           $urlRouterProvider.otherwise('/');

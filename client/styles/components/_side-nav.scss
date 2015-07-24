@@ -10,17 +10,40 @@ md-sidenav.md-closed.md-locked-open-add-active {
   .site__side-nav--content {
     background-color: $primary-color;
 
+    h1 {
+      text-align: center;
+    }
+
     a {
       text-decoration: none;
-      color: black;
+      color: $light-grey;
 
       :visited {
-        color: black;
+        color: $light-grey;
       }
+      &.md-button {
+        width: 100%;
+        margin: 0;
+        padding: 0 2em;
+        text-align: left;
+      }
+    }
+    
+    h2 {
+      padding-left: .85em;
+      color: $light-grey;
     }
   }
 
   .site__side-nav--content {
     padding-left: 1em;
+  }
+  
+  md-autocomplete {
+    margin-right: 1em;
+
+    span {
+      margin-right: 1em;
+    }
   }
 }
