@@ -3,12 +3,12 @@
 </head>
 <body ng-app="devStop" layout="row">
   <div ng-include="'client/components/views/side-nav.ng.html'" layout="fill"></div>
-    <div layout="column" tabindex="-1" role="main" flex>
-      <div ng-include="'client/components/views/top-nav.ng.html'"></div>
-      <md-content>
-        <div ui-view>
-          <!-- All route templates will be rendered here-->
-        </div>
-      </md-content>
-    </div>
+  <div layout="column" tabindex="-1" role="main" flex>
+    <div ng-include="'client/components/views/top-nav.ng.html'"></div>
+    <md-content>
+      <div ui-view>
+        <!-- All route templates will be rendered here-->
+      </div>
+    </md-content>
+  </div>
 </body>

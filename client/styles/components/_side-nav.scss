@@ -1,0 +1,26 @@
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 75vw !important;
+  max-width: 250px !important;
+  background-color: $primary-color;
+
+  .site__side-nav--container,
+  .site__side-nav--content {
+    background-color: $primary-color;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      :visited {
+        color: black;
+      }
+    }
+  }
+
+  .site__side-nav--content {
+    padding-left: 1em;
+  }
+}

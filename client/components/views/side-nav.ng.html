@@ -1,11 +1,18 @@
 <md-sidenav
+        layout="column"
         md-component-id="left"
         class="md-sidenav md-whiteframe-z2"
         md-is-locked-open="$mdMedia('gt-sm')"
-        layout="fill">
-  <md-content>
-    <h1>devStop</h1>
-    <h3>Technologies</h3>
-    <p>List of techs</p>
+        flex>
+  <md-content layout-padding class="site__side-nav--container">
+    <h1 class="md-display-3">
+      <a href="/">
+        devStop
+      </a>
+    </h1>
+    <md-content class="site__side-nav--content">
+      <h3>Technologies</h3>
+      <p>List of techs</p>
+    </md-content>
   </md-content>
 </md-sidenav>
