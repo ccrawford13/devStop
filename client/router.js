@@ -19,9 +19,44 @@ angular.module('devStop')
             templateUrl: 'client/technologies/views/technology-details.ng.html',
             controller: 'TechnologyDetailsController',
             resolve: {
-              $title: function($meteor, $stateParams) {
+              techName: function($meteor, $stateParams) {
                 var techName = $meteor.object(Technologies, $stateParams.techId).name || "";
-                return techName + ' Details';
+                return techName;
+              },
+              $title: function(techName) {
+                return techName + ' Overview';
+              }
+            }
+          })
+          .state('technologyDetails.documentation', {
+            templateUrl: 'client/technologies/views/technology-docs.ng.html',
+            resolve: {
+              $title: function(techName) {
+                return techName + ' Documentation';
+              }
+            }
+          })
+          .state('technologyDetails.articles', {
+            templateUrl: 'client/technologies/views/technology-articles.ng.html',
+            resolve: {
+              $title: function(techName) {
+                return techName + ' Articles';
+              }
+            }
+          })
+          .state('technologyDetails.videos', {
+            templateUrl: 'client/technologies/views/technology-videos.ng.html',
+            resolve: {
+              $title: function(techName) {
+                return techName + ' Videos';
+              }
+            }
+          })
+          .state('technologyDetails.questions', {
+            templateUrl: 'client/technologies/views/technology-questions.ng.html',
+            resolve: {
+              $title: function(techName) {
+                return techName + ' Questions';
               }
             }
           });

@@ -1,0 +1,25 @@
+<md-content ng-controller="TechnologyDetailsController" layout="column" flex layout-padding>
+  <md-content class="tech__links" layout="row" flex>
+    <md-button class="md-raised" ui-sref="technologyDetails" aria-label="Documentation">
+      Overview
+    </md-button>
+    <md-button class="md-raised" ui-sref=".documentation" aria-label="Documentation">
+      Documentation
+    </md-button>
+    <md-button class="md-raised" ui-sref=".articles" aria-label="Articles">
+      Articles
+    </md-button>
+    <md-button class="md-raised" ui-sref=".videos" aria-label="Videos">
+      Videos
+    </md-button>
+    <md-button class="md-raised" ui-sref=".questions" aria-label="Questions">
+      Questions
+    </md-button>
+  </md-content>
+  <!--Any shared content must be outside ui-view-->
+  <div ui-view layout-padding>
+    <!--Child views will be rendered here-->
+    <h1>Overview of {{ technology.name }}</h1>
+    <h3>{{ technology.name }} is an {{ technology.classification }}</h3>
+  </div>
+</md-content>
